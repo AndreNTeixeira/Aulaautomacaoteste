@@ -1,0 +1,60 @@
+{
+  "info": {
+    "_postman_id": "9a1ab51d-5cef-4695-aa70-5ac157c9fe92",
+    "name": "Aula-Automacao-Petstore",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "53902463",
+    "_collection_link": "https://go.postman.co/collection/53902463-9a1ab51d-5cef-4695-aa70-5ac157c9fe92?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Listar Pets Disponíveis",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "// Teste 1: Verificar se o status da resposta é 200 (OK)",
+              "pm.test(\"Status code é 200\", function () {",
+              "pm.response.to.have.status(200);",
+              "});",
+              "// Teste 2: Verificar se a resposta é uma lista (Array)",
+              "pm.test(\"A resposta deve ser uma lista de pets\", function () {",
+              "var jsonData = pm.response.json();",
+              "pm.expect(jsonData).to.be.an('array');",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://petstore.swagger.io/v2/pet/findByStatus?status=available",
+          "protocol": "https",
+          "host": [
+            "petstore",
+            "swagger",
+            "io"
+          ],
+          "path": [
+            "v2",
+            "pet",
+            "findByStatus"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "available"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
