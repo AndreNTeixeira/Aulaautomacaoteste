@@ -1,5 +1,6 @@
 name: Testes Automatizados Postman
-on:
+
+on: 
   push:
     branches: [ "main" ] # Roda toda vez que você enviar código para a main
   pull_request:
