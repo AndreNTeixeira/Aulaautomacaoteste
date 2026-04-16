@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - name: Baixando os arquivos do repositório
-        uses: actions/checkout@v4
+      uses: actions/checkout@v4 
       - name: Instalando o Node.js
         uses: actions/setup-node@v4
         with:
