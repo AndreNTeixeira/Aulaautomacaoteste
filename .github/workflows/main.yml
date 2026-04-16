@@ -12,14 +12,14 @@ jobs:
 
     steps:
       - name: Baixando os arquivos do repositório
-      uses: actions/checkout@v4 
+        uses: actions/checkout@v4 
       - name: Instalando o Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
       - name: Instalando o Newman (Executor do Postman)
-      run: npm install -g newman
+        run: npm install -g newman
       
       - name: Rodando os Testes da Petstore
-      run: newman run petstore_collection.json --reporters cli
+        run: newman run petstore_collection.json --reporters cli
