@@ -19,6 +19,6 @@ jobs:
 
       - name: Instalando o Newman (Executor do Postman)
       run: npm install -g newman
-
+      
       - name: Rodando os Testes da Petstore
       run: newman run petstore_collection.json --reporters cli
